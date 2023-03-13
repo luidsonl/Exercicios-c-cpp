@@ -428,6 +428,8 @@ void consultaEstoque(){
 	 
 	switch(num){
 	case 1:
+		cout<<"Correto";
+		break;
 	case 2:
 		cout<<"Correto";
 		break;
@@ -435,6 +437,8 @@ void consultaEstoque(){
 		cout<<"Correto";
 		break;
 	case 4:
+		cout<<"Correto";
+		break;
 	case 5:
 		cout<<"Correto";
 		break;
@@ -455,10 +459,7 @@ void maiorOuMenorQue3(){
 	cin>> num;
 	
 	switch (num){
-		case 1:
-		cout<<"Menor que 3";
-		break;
-		
+		case 1: // O código irá executar até chegar em um break
 		case 2:
 		cout<<"Menor que 3";
 		break; 	
@@ -468,9 +469,6 @@ void maiorOuMenorQue3(){
 		break;
 		
 		case 4:
-		cout<<"Maior que 3";
-		break;
-		
 		case 5:
 		cout<<"Maior que 3";
 		break;
@@ -484,6 +482,9 @@ void maiorOuMenorQue3(){
 }
 
 int main(){
+	/*Chama as funções*/
+	
+	
 	//estacao();
 	//estacaoMelhorada();
 	//aMaiorB();
