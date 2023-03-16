@@ -116,9 +116,9 @@ void urnaEletronica(){
 	
 	while (nota<0 || nota>10){
 	
-	cout<<"Nota inválida"<<endl;
-	cout<<"Deixe uma nota de 0 a 10 como avaliação"<<endl;
-	cin>> nota;
+		cout<<"Nota inválida"<<endl;
+		cout<<"Deixe uma nota de 0 a 10 como avaliação"<<endl;
+		cin>> nota;
 	}
 	cout<<"Obrigado pela avaliação!"<<endl;
 }
@@ -341,8 +341,165 @@ void fibonacci(){
 	cout<<"Soma dos números:"<<soma<<endl;
 	
 }
+/*Faça um programa que leia números reais maiores que zero. Quando for informado o número zero, o programa deverá apresentar quantos
+ * números foram informados e a média destes
+ * --------------Usando do while--------------
+ * */
+
+void doWhileLoopNumerosMedia(){
+	float numero, soma = 0, media;
+	int contador = -1;
+	
+	
+	cout<<"Informe números maiores que 0, para finalizar digite 0"<<endl; // endl faz a mesma coisa que "\n"
+	do{
+		
+		cin >> numero;
+		soma += numero; // Igual soma = soma + numero
+		contador ++;
+	} while(numero != 0);
+	
+	media = soma/contador;
+	
+	cout<<"Foram informados "<< contador<< " números, a soma deles é "<< soma <<" e a média é "<< media;		
+	
+}
+
+/*Faça um programa que simule uma urna eletrônica.
+*A tela a ser apresentada deverá ser da seguinte forma.
+
+*As opcoes são:
+*1. Candidato Edinaldo Pereira
+*2. Candidato Manoel Gomes
+*3. Candidato Marcos Jeeves
+*4. NULO
+*5. Branco
+*Entre com o seu voto:
+*
+*O programa deverá Ler os votos dos eleitores e, quando for entrado o número 6, apresentar as seguintesinformações.
+*a) O número de votos de cada candidato;
+*b) A porcentagem de votos nulos;
+*c) A porcentagem de votos brancos;
+*d) O candidato vencedor.
+* ---------Usando do while-----------
+* */
+void doWhileuUrnaEletronica(){
+	int voto;
+	float pEdinaldo, pManoel,pMarcos, pNulo, pBranco, edinaldo = 0, manoel = 0, marcos = 0, nulo = 0, branco = 0, total = 0;
+	string vencedor;
+	
+	do{
+		cout<<"Informe seu voto, digite:"<<endl;
+		cout<<"1. Candidato Edinaldo Pereira"<<endl;
+		cout<<"2. Candidato Manoel Gomes"<<endl;
+		cout<<"3. Candidato Marcos Jeeves"<<endl;
+		cout<<"4. Nulo"<<endl;
+		cout<<"5. Branco"<<endl;
+		cout<<"6. Para Encerrar"<<endl;
+		cin>> voto;
+		
+		switch(voto){
+			case 1: edinaldo ++; break;
+			case 2: manoel ++; break;
+			case 3: marcos ++; break;
+			case 4: nulo ++; break;
+			case 5: branco ++; break;
+			case 6: break;
+			default: nulo ++; // Anula o voto caso seja informada uma upção inválida
+		}
+	}while(voto !=6);
+	total = edinaldo + manoel + marcos + nulo + branco;
+	
+	//Pega o percentual
+	pEdinaldo = edinaldo*100 / total;
+	pManoel = manoel*100 / total;
+	pMarcos = marcos*100/total;
+	pNulo = nulo *100/total;
+	pBranco = branco * 100 / total;
+	
+	
+	//Calcula Vencedor
+	if (edinaldo > manoel && edinaldo > marcos){
+		vencedor = "Edinaldo Pereira";
+	}else if (manoel > edinaldo && manoel > marcos){
+		vencedor = "Manoel Gomes";
+	}else if (marcos > edinaldo && marcos > manoel){
+		vencedor = "Marcos Jeeves";
+	} else{
+		vencedor = "Empate";
+	}
+	
+	
+	cout<<"-----------Resultados--------"<<endl;
+	
+	cout<<"1. Candidato Edinaldo Pereira: "<<edinaldo<<"-------"<<pEdinaldo<<"%"<<endl;
+	cout<<"2. Candidato Manoel Gomes: "<<manoel<<"-------"<<pManoel<<"%"<<endl;
+	cout<<"3. Candidato Marcos Jeeves: "<<marcos<<"-------"<<pMarcos<<"%"<<endl;
+	cout<<"4. NULO: "<<nulo<<"-------"<<pNulo<<"%"<<endl;
+	cout<<"5. Branco: "<<branco<<"-------"<<pBranco<<"%"<<endl;
+	cout<<"Vencedor: "<<vencedor<<endl;
+	
+}
+
+/*Faça um programa que peça uma nota, entre zero e dez.
+ * Mostre uma mensagem caso o valor seja inválido e continue pedindo até que o usuário informe um valor válido
+ * -----------------------do while--------------*/
  
- 
+ void doWhileAvaliacao(){
+	int nota;
+	
+	do{
+		cout<<"Nota inválida"<<endl;
+		cout<<"Deixe uma nota de 0 a 10 como avaliação"<<endl;
+		cin>> nota;
+	}while (nota<0 || nota>10);
+	
+	cout<<"Obrigado pela avaliação!"<<endl;
+}
+
+/*Faça um progama que some automaticamente os números de 1 até 100
+ * -------------------do while-------------------*/
+
+void doWhile1a100(){
+	int soma = 0, i = 1;
+	
+	do{
+		soma +=i;
+		i++;
+	}while(i <= 100);
+	
+	cout<<"A soma de todos os números de 1 a 100 é igual a "<<soma<<endl;
+}
+
+/*Faça um programa que recebe dois números inteiros e gera os números inteiros que estão no intervalo entre eles
+ * ------------------------do while --------------------*/
+void doWhileIntervalo(){
+	int num1, num2, inicio, fim, count;
+	
+	cout <<"Informe um número inteiro:"<<endl;
+	cin >>num1;
+	
+	cout <<"Informe outro número inteiro:"<<endl;
+	cin >> num2;
+	
+	// irá definir qual é o número inicial e qual é o final
+	if (num1 <num2){
+		inicio = num1;
+		fim = num2;
+	}else{
+		inicio = num2;
+		fim = num1;
+	}
+	
+	cout <<"Os números inteiros no intervalo entre "<<inicio <<" e "<< fim<< " são "<< endl;
+	
+	count = inicio;
+	do{
+		cout << count<< endl;
+		count ++;
+	}while (count <= fim);
+}
+
  
 // Função principal
 int main(){
@@ -356,8 +513,12 @@ int main(){
 	//for1a100();
 	//forIntervalo();
 	//cincoNumeros();
-	fibonacci();
-	
+	//fibonacci();
+	//doWhileLoopNumerosMedia();
+	//doWhileuUrnaEletronica();
+	//doWhileAvaliacao();
+	//doWhile1a100();
+	doWhileIntervalo();
 	
 	
 	return 0;
