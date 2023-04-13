@@ -3,7 +3,7 @@
 
 typedef struct Node{
 	int value;
-	struct node *next;
+	struct Node *next;
 } Node;
 
 typedef struct{
