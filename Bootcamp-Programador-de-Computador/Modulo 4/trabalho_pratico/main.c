@@ -9,4 +9,13 @@ ou o valor a ser removido não esteja presente na lista.
 5. O programa deve liberar a memória alocada para a lista quando
 finalizado.
 */
+#include <stdio.h>
+#include <stdlib.h>
+#include "lista.c"
+
+
+int main(){
+	initList();
+	return 0;
+}
 
