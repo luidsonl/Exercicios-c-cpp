@@ -11,7 +11,7 @@ List initList(){
 }
 
 void insertOnFirst(List *list, int value){
-	Node *new = malloc(sizeof(Node));
+	Node *new = (Node*)malloc(sizeof(Node));
 	new->value = value;
 	new->next = list->first;
 	// Poderia ser feito também com:
@@ -23,6 +23,27 @@ void insertOnFirst(List *list, int value){
 	
 	
 }
+void insertOnLast(List *list, int value){
+	Node *current, *new = (Node*)malloc(sizeof(Node));
+	new->value = value;
+	new->next = NULL;
+	
+	if(list->first == NULL){
+		list->first = new;
+	}else{
+		current = list->first;
+		while(current->next != NULL){
+			current = current->next;
+		}
+		current->next = new;
+	}
+	list->length++;
+	
+	
+	
+	
+}
+
 
 void printList(List *list){
 	Node *current = list->first;

@@ -21,7 +21,8 @@ int main(){
 	
 	do{
 		printf("1 - Inserir no início\n");
-		printf("2 - Imprimir\n");
+		printf("2 - Inserir no final\n");
+		printf("3 - Imprimir\n");
 		printf("0 - Sair do programa\n");
 		scanf("%d", &option);
 		
@@ -32,6 +33,11 @@ int main(){
 				insertOnFirst(&list, value);
 				break;
 			case 2:
+				printf("Informe o valor\n");
+				scanf("%d", &value);
+				insertOnLast(&list, value);
+				break;
+			case 3:
 				printf("Os números informados foram:\n");
 				printList(&list);
 				break;
