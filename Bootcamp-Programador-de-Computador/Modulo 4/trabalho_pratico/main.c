@@ -23,6 +23,8 @@ int main(){
 		printf("1 - Inserir no início\n");
 		printf("2 - Inserir no final\n");
 		printf("3 - Imprimir\n");
+		printf("4 - Deixar em ordem crescente\n");
+		printf("5 - Remover valor\n");
 		printf("0 - Sair do programa\n");
 		scanf("%d", &option);
 		
@@ -41,11 +43,21 @@ int main(){
 				printf("Os números informados foram:\n");
 				printList(&list);
 				break;
+			case 4:
+				printf("Lista em ordem crescente:\n");
+				orderList(&list);
+				break;
+			case 5:
+				printf("Qual número você deseja remover?\n");
+				scanf("%d", &value);
+				removeValue(&list, value);
+				break;
 			case 0:
 				printf("Encerrando programa\n");
 				break;
 			
 		}
+		printf("------------------\n");
 	}while(option != 0);
 	return 0;
 }
