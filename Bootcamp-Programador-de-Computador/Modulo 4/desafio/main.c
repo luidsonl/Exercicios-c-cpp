@@ -32,7 +32,7 @@ int main(){
 	
 	int option;
 	
-	printf("\nBem vindo a agenda\n");
+	printf("Bem vindo a agenda\n");
 	
 	do{
 		printf("1 - Cadastrar um novo contato\n");
@@ -49,10 +49,10 @@ int main(){
 				addContact();
 				break;
 			case 2:
-				
+				searchContact();
 				break;
 			case 3:
-				
+				showContacts();
 				break;
 			case 4:
 				
